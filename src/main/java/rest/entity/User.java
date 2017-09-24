@@ -3,19 +3,20 @@ package rest.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_sign")
 public class User {
 
-    @Id
-    @GeneratedValue
+
     private long id;
 
-    @Column(name = "name")
+
     private String name;
 
-    @Column(name = "surname")
+
     private String surname;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;
     }
@@ -24,6 +25,7 @@ public class User {
         this.id = id;
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -32,6 +34,7 @@ public class User {
         this.name = name;
     }
 
+    @Column(name = "surname")
     public String getSurname() {
         return surname;
     }

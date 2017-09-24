@@ -1,38 +1,32 @@
-package rest.entity;
+package rest.entity.request;
 
-import javax.persistence.*;
+import rest.entity.ContentJson;
 
-@Entity
-@Table(name = "emailvalidationsign")
-public class EmailValidation {
+public class AddEmailRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "E_ID")
-    private long id;
+        private String from;
 
-    @Column(name = "fro_m")
-    private String from;
+        private String reply_to;
 
-    @Column(name = "reply_to")
-    private String reply_to;
+        private String to;
 
-    @Column(name = "t_o")
-    private String to;
+        private String cc;
 
-    @Column(name = "c_c")
-    private String cc;
+        private String bcc;
 
-    @Column(name = "bc_c")
-    private String bcc;
+        private String subject;
 
-    @Column(name = "subjec_t")
-    private String subject;
+        private ContentJson content;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name= "C_ID")
-    private ContentJson content;
-
+    public AddEmailRequest(String from, String reply_to, String to, String cc, String bcc, String subject, ContentJson content) {
+        this.from = from;
+        this.reply_to = reply_to;
+        this.to = to;
+        this.cc = cc;
+        this.bcc = bcc;
+        this.subject = subject;
+        this.content = content;
+    }
 
     public ContentJson getContent() {
         return content;
@@ -40,6 +34,10 @@ public class EmailValidation {
 
     public void setContent(ContentJson content) {
         this.content = content;
+    }
+
+    public AddEmailRequest(){
+
     }
 
     public String getFrom() {
@@ -91,5 +89,5 @@ public class EmailValidation {
     }
 
 
-}
 
+}

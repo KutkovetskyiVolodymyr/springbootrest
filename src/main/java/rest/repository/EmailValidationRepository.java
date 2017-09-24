@@ -1,15 +1,8 @@
 package rest.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import rest.entity.EmailValidation;
-import java.util.LinkedList;
-import java.util.List;
 
-
-public class EmailValidationRepository {
-    public List< EmailValidation>  validation;
-   public EmailValidationRepository(){
-        validation = new LinkedList<>();
-    }
-
+public interface EmailValidationRepository extends JpaRepository<EmailValidation, Long> {
 
 }
