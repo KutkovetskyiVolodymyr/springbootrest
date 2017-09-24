@@ -18,13 +18,13 @@ public class EmailValidation {
     private String reply_to;
 
     @Column(name = "t_o")
-    private String to;
+    private String[] to;
 
     @Column(name = "c_c")
-    private String cc;
+    private String[] cc;
 
     @Column(name = "bc_c")
-    private String bcc;
+    private String[] bcc;
 
     @Column(name = "subjec_t")
     private String subject;
@@ -33,6 +33,21 @@ public class EmailValidation {
     @JoinColumn(name= "C_ID")
     private ContentJson content;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String[] getTo() {
+        return to;
+    }
+
+    public void setTo(String[] to) {
+        this.to = to;
+    }
 
     public ContentJson getContent() {
         return content;
@@ -58,27 +73,27 @@ public class EmailValidation {
         this.reply_to = reply_to;
     }
 
-    public String getTo() {
+   /* public String getTo() {
         return to;
     }
 
     public void setTo(String to) {
         this.to = to;
     }
-
-    public String getCc() {
+*/
+    public String[] getCc() {
         return cc;
     }
 
-    public void setCc(String cc) {
+    public void setCc(String[] cc) {
         this.cc = cc;
     }
 
-    public String getBcc() {
+    public String[] getBcc() {
         return bcc;
     }
 
-    public void setBcc(String bcc) {
+    public void setBcc(String[] bcc) {
         this.bcc = bcc;
     }
 

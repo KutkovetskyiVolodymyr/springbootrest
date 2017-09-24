@@ -8,17 +8,17 @@ public class AddEmailRequest {
 
         private String reply_to;
 
-        private String to;
+        private String[] to;
 
-        private String cc;
+        private String[] cc;
 
-        private String bcc;
+        private String[] bcc;
 
         private String subject;
 
         private ContentJson content;
 
-    public AddEmailRequest(String from, String reply_to, String to, String cc, String bcc, String subject, ContentJson content) {
+    public AddEmailRequest(String from, String reply_to, String[] to, String[] cc, String[] bcc, String subject, ContentJson content) {
         this.from = from;
         this.reply_to = reply_to;
         this.to = to;
@@ -56,27 +56,27 @@ public class AddEmailRequest {
         this.reply_to = reply_to;
     }
 
-    public String getTo() {
+    public String[] getTo() {
         return to;
     }
 
-    public void setTo(String to) {
+    public void setTo(String[] to) {
         this.to = to;
     }
 
-    public String getCc() {
+    public String[] getCc() {
         return cc;
     }
 
-    public void setCc(String cc) {
+    public void setCc(String[] cc) {
         this.cc = cc;
     }
 
-    public String getBcc() {
+    public String[] getBcc() {
         return bcc;
     }
 
-    public void setBcc(String bcc) {
+    public void setBcc(String[] bcc) {
         this.bcc = bcc;
     }
 

@@ -20,17 +20,7 @@ public class ContentJson {
     @Column(name = "value")
     private  String value;
 
-    //@OneToMany(fetch = FetchType.LAZY, mappedBy = "emailvalidationsign")
-    /*private Set<EmailValidation> emailValidationSet = new HashSet<EmailValidation>(0);
 
-    public Set<EmailValidation> getEmailValidationSet() {
-        return emailValidationSet;
-    }
-
-    public void setEmailValidationSet(Set<EmailValidation> emailValidationSet) {
-        this.emailValidationSet = emailValidationSet;
-    }
-*/
     public long getId() {
         return id;
     }
