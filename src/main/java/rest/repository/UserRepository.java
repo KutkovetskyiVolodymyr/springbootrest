@@ -7,5 +7,5 @@ import rest.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    public Boolean findUsersByName(String name);
+    public User findUsersByName(String name);
 }

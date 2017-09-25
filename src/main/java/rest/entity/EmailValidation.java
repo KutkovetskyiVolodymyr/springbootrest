@@ -1,6 +1,7 @@
 package rest.entity;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "emailvalidationsign")
@@ -28,6 +29,17 @@ public class EmailValidation {
 
     @Column(name = "subjec_t")
     private String subject;
+
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private java.util.Date createDate;
+
+    public java.util.Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
 
     @ManyToOne(optional = false)
     @JoinColumn(name= "C_ID")
@@ -73,14 +85,6 @@ public class EmailValidation {
         this.reply_to = reply_to;
     }
 
-   /* public String getTo() {
-        return to;
-    }
-
-    public void setTo(String to) {
-        this.to = to;
-    }
-*/
     public String[] getCc() {
         return cc;
     }

@@ -2,6 +2,8 @@ package rest.entity.request;
 
 import rest.entity.ContentJson;
 
+import java.sql.Date;
+
 public class AddEmailRequest {
 
         private String from;
@@ -18,7 +20,8 @@ public class AddEmailRequest {
 
         private ContentJson content;
 
-    public AddEmailRequest(String from, String reply_to, String[] to, String[] cc, String[] bcc, String subject, ContentJson content) {
+
+    public AddEmailRequest(String from, String reply_to,String[] cc, String[] bcc, String subject, ContentJson content) {
         this.from = from;
         this.reply_to = reply_to;
         this.to = to;
