@@ -1,0 +1,25 @@
+/order
+
+
+{ "from": "vladimir", 
+  "reply_to": "reply email",
+  "to":[ "recipient email 1"], 
+  "cc":[ "cc email 1"], 
+  "bcc": ["bcc email 1"],
+  "subject": "customer subject",
+  "content": {
+     "type": "text/plain", 
+      "value": "email content" 
+  } 
+}
+
+/users
+
+{
+"name": "vladimir",
+"password": "kutkovetsky"
+}
+
+/order/status/vladimir/kutkovetsky
+
+
