@@ -11,7 +11,7 @@ import rest.repository.UserRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("/users")
 public class UserController {
 
     private UserRepository userRepository;
@@ -27,10 +27,15 @@ public class UserController {
     }
 
     @RequestMapping(produces="application/json",method =RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> addNewWebUser(@RequestBody AddUserRequest addUserRequest) {
+    public Object addNewWebUser(@RequestBody AddUserRequest addUserRequest) {
+        if(addUserRequest.getName()==null || addUserRequest.getPassword()==null){
+            String retur = "Введите все данные";
+            return new ResponseEntity<String>(retur, HttpStatus.NO_CONTENT);
+        }
+
         User user = new User();
         user.setName(addUserRequest.getName());
-        user.setSurname(addUserRequest.getSurname());
+        user.setPassword(addUserRequest.getPassword());
         userRepository.save(user);
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }

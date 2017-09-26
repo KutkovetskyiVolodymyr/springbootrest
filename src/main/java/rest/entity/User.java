@@ -13,7 +13,7 @@ public class User {
     private String name;
 
 
-    private String surname;
+    private String password;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,12 +34,12 @@ public class User {
         this.name = name;
     }
 
-    @Column(name = "surname")
-    public String getSurname() {
-        return surname;
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

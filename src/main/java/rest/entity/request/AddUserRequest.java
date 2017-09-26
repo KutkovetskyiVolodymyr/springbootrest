@@ -3,22 +3,22 @@ package rest.entity.request;
 public class AddUserRequest {
 
     private String name;
-    private String surname;
+    private String password;
 
-    public AddUserRequest(String name, String surname){
+    public AddUserRequest(String name, String password){
         this.name=name;
-        this.surname=surname;
+        this.password=password;
     }
 
     public AddUserRequest() {
     }
 
-    public String getSurname() {
-        return surname;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setPassword(String surname) {
+        this.password = surname;
     }
 
     public String getName() {
